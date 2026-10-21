@@ -1,0 +1,156 @@
+/* Rover-only styles, scoped so the original Shoreline pages are unchanged. */
+.rover-dashboard * {  box-sizing: border-box;  }
+.rover-dashboard button, .rover-dashboard input {  font: inherit;  }
+.rover-dashboard button {  cursor: pointer;  }
+.rover-dashboard button:focus-visible, .rover-dashboard input:focus-visible {  outline: 2px solid var(--primary-soft); outline-offset: 2px;  }
+.rover-dashboard .app-shell {  height: 100dvh; min-height: 640px; display: flex; flex-direction: column; background: var(--background);  }
+.rover-dashboard .topbar {  height: 68px; min-height: 68px; border-bottom: 1px solid var(--border); background: rgba(250,248,242,.94); position:relative; z-index: 700;  }
+.rover-dashboard .topbar-inner {  display:flex; align-items:center; justify-content:space-between; gap:20px; max-width: 1840px; margin:0 auto; width:100%; height:100%; padding: 0 clamp(18px, 2.6vw, 42px);  }
+.rover-dashboard .brand {  min-width:0; display:flex; align-items:center; gap:11px;  }
+.rover-dashboard .shoreline-mark {  flex:0 0 auto; height:36px; width:36px; border-radius: 8px; display:grid; place-items:center; background:var(--primary); color:var(--primary-foreground);  }
+.rover-dashboard .shoreline-mark svg {  width:25px; height:25px;  }
+.rover-dashboard .shoreline-wordmark {  font: 600 26px/1 var(--font-heading); letter-spacing: -.03em;  }
+.rover-dashboard .brand-divider {  width:1px; height:24px; background:var(--border); margin:0 6px;  }
+.rover-dashboard .page-name {  font: 600 13px/1.1 var(--font-body); color:var(--muted-foreground); white-space:nowrap;  }
+.rover-dashboard .header-status {  display:flex; align-items:center; gap:9px; font:600 12px/1 var(--font-body); white-space:nowrap;  }
+.rover-dashboard .sim-badge {  padding:8px 11px; border:1px solid var(--border); background:var(--card); border-radius:7px; font-size:11px; font-weight:500; margin-right:10px; color:var(--muted-foreground);  }
+.rover-dashboard .dot {  height:8px; width:8px; border-radius:50%; background:var(--muted-foreground);  }
+.rover-dashboard .dot.online {  background:var(--primary-soft); box-shadow:0 0 0 3px rgba(28,122,109,.1);  }
+.rover-dashboard .dot.offline {  background:var(--danger); box-shadow:0 0 0 3px rgba(143,42,29,.1);  }
+.rover-dashboard .connection-copy {  color:var(--muted-foreground);  }
+.rover-dashboard .workspace {  flex:1 1 0; min-height:0; height:calc(100dvh - 68px); display:grid; grid-template-columns: minmax(310px, 340px) minmax(0,1fr); gap:16px; padding:16px clamp(16px, 2vw, 34px); max-width:1840px; width:100%; margin:0 auto; overflow:hidden;  }
+.rover-dashboard .sidebar {  height:100%; min-height:0; display:flex; flex-direction:column; gap:12px; overflow-y:auto; padding-right:2px; scrollbar-width:thin; scrollbar-color:var(--border) transparent;  }
+.rover-dashboard .sim-column {  display:flex; flex-direction:column; min-height:0; min-width:0; gap:12px; overflow:hidden;  }
+.rover-dashboard .panel {  border:1px solid var(--border); border-radius:10px; background:var(--card); box-shadow:var(--shadow);  }
+.rover-dashboard .telemetry-panel {  padding:17px 16px 16px; flex:0 0 auto;  }
+.rover-dashboard .panel-title-row {  display:flex; align-items:flex-start; justify-content:space-between; gap:10px;  }
+.rover-dashboard .panel-title-row.compact {  padding:15px 16px 9px;  }
+.rover-dashboard .panel-title-row h2, .rover-dashboard .sim-toolbar h2 {  font:600 22px/1.15 var(--font-heading); letter-spacing:-.022em; margin:5px 0 0;  }
+.rover-dashboard .eyebrow {  display:block; color:var(--muted-foreground); font:600 10px/1.3 var(--font-body); letter-spacing:.09em; text-transform:uppercase;  }
+.rover-dashboard .status-pill {  display:inline-block; flex:0 1 145px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; padding:7px 10px; border:1px solid var(--border); border-radius:6px; background:var(--secondary); color:var(--primary); text-align:center; font:600 10px/1.2 var(--font-body);  }
+.rover-dashboard .status-pill.low-battery, .rover-dashboard .status-pill.bin-full, .rover-dashboard .status-pill.obstacle-detected, .rover-dashboard .status-pill.returning-to-base {  color:#94521d; border-color:#d7b696; background:#fcf1e5;  }
+.rover-dashboard .status-pill.connection-lost, .rover-dashboard .status-pill.battery-depleted, .rover-dashboard .status-pill.emergency-stop {  color:var(--danger); border-color:#d9aca4; background:#f8eae5;  }
+.rover-dashboard .status-pill.charging-at-base, .rover-dashboard .status-pill.fully-charged-at-base, .rover-dashboard .status-pill.trash-collected {  color:var(--primary-soft); border-color:#abcfc1; background:#e6f1eb;  }
+.rover-dashboard .primary-bars {  display:grid; gap:12px; margin-top:15px; padding:13px 12px 12px; border:1px solid #dcd6c7; border-radius:7px; background:#f4f1e8;  }
+.rover-dashboard .bar-label {  display:flex; justify-content:space-between; align-items:center; gap:8px; color:var(--muted-foreground); font-size:11px; font-weight:500; margin-bottom:7px;  }
+.rover-dashboard .bar-label strong {  font-variant-numeric:tabular-nums; font-size:12px; color:var(--foreground); font-weight:700;  }
+.rover-dashboard .progress-track {  width:100%; height:6px; overflow:hidden; border-radius:100px; background:#d4dacc;  }
+.rover-dashboard .progress-fill {  height:100%; border-radius:inherit; transition:width .3s ease; background:var(--primary-soft);  }
+.rover-dashboard .progress-fill.cyan, .rover-dashboard .progress-fill.magenta {  background:var(--primary-soft);  }
+.rover-dashboard .progress-fill.danger {  background:var(--danger);  }
+.rover-dashboard .speed-control {  margin-top:12px; padding:12px; border:1px solid #dcd6c7; border-radius:7px; background:var(--card);  }
+.rover-dashboard .speed-control input[type=range] {  display:block; width:100%; accent-color:var(--primary-soft); cursor:pointer; margin:8px 0 5px;  }
+.rover-dashboard .speed-endpoints {  display:flex; justify-content:space-between; font-size:10px; color:#758078;  }
+.rover-dashboard .metric-grid {  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:12px;  }
+.rover-dashboard .metric-card {  min-height:66px; padding:10px 11px; display:flex; flex-direction:column; justify-content:space-between; gap:4px; background:var(--card); border:1px solid #ded8c9; border-radius:7px;  }
+.rover-dashboard .metric-label {  color:var(--muted-foreground); text-transform:uppercase; letter-spacing:.075em; font-size:9px; line-height:1.2; font-weight:600;  }
+.rover-dashboard .metric-value {  font-size:16px; line-height:1.2; font-weight:600; letter-spacing:-.015em; color:var(--foreground); font-variant-numeric:tabular-nums;  }
+.rover-dashboard .metric-card.good-card .metric-value {  color:var(--primary-soft);  }
+.rover-dashboard .metric-card.alert-card {  border-color:#d9b89c; background:#fdf4e9;  }
+.rover-dashboard .metric-card.alert-card .metric-value {  color:#94521d;  }
+.rover-dashboard .map-panel {  padding:10px; flex:0 0 auto;  }
+.rover-dashboard .mini-map-shell {  height:188px; position:relative; overflow:hidden; border-radius:6px; border:1px solid #d4cebc;  }
+.rover-dashboard .map-heading {  position:absolute; inset:9px 9px auto; z-index:500; display:flex; justify-content:space-between; align-items:start; gap:8px; pointer-events:none;  }
+.rover-dashboard .map-heading > div {  display:flex; flex-direction:column; gap:2px; padding:8px 10px; border:1px solid var(--border); border-radius:6px; background:rgba(250,248,242,.96); box-shadow:0 2px 10px #16232b12;  }
+.rover-dashboard .map-heading strong {  font-size:12px; font-weight:600;  }
+.rover-dashboard .icon-button {  pointer-events:auto; display:grid; place-items:center; width:34px; height:34px; border-radius:6px; border:1px solid var(--border); background:rgba(250,248,242,.97); color:var(--primary); font-size:19px; box-shadow:0 2px 10px #16232b12;  }
+.rover-dashboard .icon-button:hover {  background:var(--accent);  }
+.rover-dashboard .leaflet-map {  width:100%; height:100%; background:#e4e6d5;  }
+.rover-dashboard .coords {  display:flex; justify-content:space-between; gap:4px; margin:9px 2px 0; color:var(--muted-foreground); font:500 10px/1.3 var(--font-body); font-variant-numeric:tabular-nums;  }
+.rover-dashboard .log-panel {  display:flex; flex-direction:column; min-height:165px; max-height:290px; flex:1 0 165px; overflow:hidden;  }
+.rover-dashboard .log-count {  min-width:28px; text-align:center; color:var(--primary-soft); background:#e8f1e9; border:1px solid #b9d4ca; border-radius:6px; font:700 11px/1.3 var(--font-body); padding:5px 7px;  }
+.rover-dashboard .log-list {  min-height:0; flex:1 1 0; padding:0 12px 11px; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#d9d1c1 transparent;  }
+.rover-dashboard .log-item {  display:grid; grid-template-columns: 58px 7px minmax(0,1fr); align-items:start; gap:8px; padding:9px 2px; border-bottom:1px solid #e7e2d6; color:var(--foreground); font-size:11px; line-height:1.45;  }
+.rover-dashboard .log-time {  color:#777f76; font-variant-numeric:tabular-nums; font-size:10px;  }
+.rover-dashboard .log-marker {  width:6px; height:6px; background:#adb5a7; border-radius:50%; margin-top:5px;  }
+.rover-dashboard .log-item.good .log-marker, .rover-dashboard .log-item.detect .log-marker {  background:var(--primary-soft);  }
+.rover-dashboard .log-item.warn .log-marker {  background:#c58849;  }
+.rover-dashboard .log-item.danger .log-marker {  background:var(--danger);  }
+.rover-dashboard .sim-toolbar {  flex:0 0 auto; padding:15px 18px 16px; display:grid; grid-template-columns:1fr; gap:13px;  }
+.rover-dashboard .toolbar-left {  display:flex; align-items:center; justify-content:space-between; gap:12px; min-width:0;  }
+.rover-dashboard .tool-buttons {  display:flex; flex-wrap:wrap; align-items:center; gap:7px;  }
+.rover-dashboard .tool-buttons button, .rover-dashboard .mode-toggle {  display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:32px; padding:7px 11px; white-space:nowrap; border:1px solid var(--border); border-radius:6px; background:var(--card); color:var(--primary); font:600 11px/1.2 var(--font-body); transition:background .18s ease, border-color .18s ease, transform .18s ease;  }
+.rover-dashboard .tool-buttons button:hover, .rover-dashboard .mode-toggle:hover {  background:var(--accent); border-color:#a6bcac;  }
+.rover-dashboard .tool-buttons .primary-action {  background:var(--primary); border-color:var(--primary); color:var(--primary-foreground);  }
+.rover-dashboard .tool-buttons .primary-action:hover {  background:#195b51; color:white;  }
+.rover-dashboard .tool-buttons .danger-outline {  color:var(--danger); border-color:#d9aca4;  }
+.rover-dashboard .tool-buttons .danger-solid {  background:var(--danger); border-color:var(--danger); color:white;  }
+.rover-dashboard .mode-toggle {  min-height:36px; padding:7px 11px; background:#edf3ec; color:var(--primary);  }
+.rover-dashboard .mode-toggle i {  display:block; width:27px; height:14px; flex:0 0 auto; border-radius:30px; position:relative; background:#bacabd;  }
+.rover-dashboard .mode-toggle i:after {  content:""; position:absolute; left:2px; top:2px; width:10px; height:10px; border-radius:50%; background:#fff; transition:left .18s ease;  }
+.rover-dashboard .mode-toggle.auto {  background:var(--primary); color:white; border-color:var(--primary);  }
+.rover-dashboard .mode-toggle.auto i {  background:#4c8270;  }
+.rover-dashboard .mode-toggle.auto i:after {  left:15px;  }
+.rover-dashboard .sim-frame {  min-height:0; flex:1 1 0; position:relative; overflow:hidden; border-radius:9px; border:1px solid var(--ink-border); background:var(--ink-background); box-shadow:var(--shadow);  }
+.rover-dashboard .simulation-svg {  display:block; width:100%; height:100%;  }
+.rover-dashboard .sim-label {  font:600 11px/1.3 var(--font-body); letter-spacing:.03em;  }
+.rover-dashboard .trash-label {  fill:#e8c59d;  }
+.rover-dashboard .obstacle-label {  fill:#e8ba8f;  }
+.rover-dashboard .home-label {  fill:var(--ink-accent); font-size:10px; font-weight:700; letter-spacing:.08em;  }
+.rover-dashboard .sim-hud-text {  fill:var(--ink-foreground); font:600 12px/1 var(--font-body); letter-spacing:.04em;  }
+.rover-dashboard .sim-hud-small {  fill:var(--ink-accent); font:600 10px/1 var(--font-body); letter-spacing:.07em;  }
+.rover-dashboard .sim-help {  position:absolute; left:14px; bottom:14px; max-width:calc(100% - 28px); padding:8px 11px; color:var(--ink-foreground); background:rgba(12,31,36,.91); border:1px solid var(--ink-border); border-radius:6px; font-size:11px; pointer-events:none;  }
+.rover-dashboard .bottom-strip {  border:1px solid var(--border); border-radius:8px; background:var(--card); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); flex:0 0 auto; overflow:hidden;  }
+.rover-dashboard .bottom-strip>div {  min-width:0; display:flex; flex-direction:column; gap:4px; padding:9px 13px; border-right:1px solid var(--border);  }
+.rover-dashboard .bottom-strip>div:last-child {  border-right:0;  }
+.rover-dashboard .bottom-strip span {  color:var(--muted-foreground); font:600 9px/1.2 var(--font-body); letter-spacing:.075em; text-transform:uppercase;  }
+.rover-dashboard .bottom-strip strong {  color:var(--foreground); font:500 11px/1.25 var(--font-body); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;  }
+.rover-dashboard .map-modal-backdrop {  position:fixed; inset:0; z-index:1000; display:grid; place-items:center; padding:24px; background:rgba(12,31,36,.68); backdrop-filter:blur(6px);  }
+.rover-dashboard .map-modal {  width:min(1000px,92vw); height:min(730px,85vh); border-radius:10px; background:var(--card); border:1px solid var(--border); overflow:hidden; box-shadow:0 30px 90px #0c1f2477;  }
+.rover-dashboard .map-modal-shell {  height:100%; width:100%; position:relative;  }
+.rover-dashboard .map-modal-shell .map-heading {  top:15px; left:15px; right:15px;  }
+.rover-dashboard .map-modal-shell .leaflet-map {  width:100%; height:100%;  }
+.rover-dashboard .leaflet-control-attribution {  font-size:9px !important;  }
+@media  (max-width: 1170px)  {
+.rover-dashboard .workspace {  grid-template-columns:300px minmax(0,1fr); gap:12px; padding:12px;  }
+.rover-dashboard .sim-toolbar {  padding:12px 13px;  }
+.rover-dashboard .tool-buttons button {  padding-inline:9px;  }
+}
+@media  (max-width: 850px)  {
+.rover-dashboard .app-shell {  height:auto; min-height:100vh;  }
+.rover-dashboard .workspace {  height:auto; grid-template-columns:1fr; overflow:visible;  }
+.rover-dashboard .sidebar {  overflow:visible; display:grid; grid-template-columns:1fr 1fr;  }
+.rover-dashboard .telemetry-panel {  grid-row: span 2;  }
+.rover-dashboard .log-panel {  max-height:270px;  }
+.rover-dashboard .sim-column {  min-height:660px;  }
+.rover-dashboard .sim-frame {  min-height:500px;  }
+.rover-dashboard .bottom-strip {  grid-template-columns:repeat(2,1fr);  }
+.rover-dashboard .bottom-strip>div:nth-child(2) {  border-right:0;  }
+.rover-dashboard .bottom-strip>div:nth-child(-n/**/+2) {  border-bottom:1px solid var(--border);  }
+}
+@media  (max-width: 580px)  {
+.rover-dashboard .topbar-inner {  padding-inline:14px;  }
+.rover-dashboard .shoreline-wordmark {  font-size:22px;  }
+.rover-dashboard .brand-divider, .rover-dashboard .page-name, .rover-dashboard .sim-badge {  display:none;  }
+.rover-dashboard .workspace {  padding:10px;  }
+.rover-dashboard .sidebar {  display:flex;  }
+.rover-dashboard .sim-column {  min-height:560px;  }
+.rover-dashboard .sim-frame {  min-height:360px;  }
+.rover-dashboard .sim-help {  font-size:9px; bottom:8px; left:8px;  }
+.rover-dashboard .header-status {  font-size:10px;  }
+}
+@media  (prefers-reduced-motion:reduce)  {
+.rover-dashboard *, .rover-dashboard *:before, .rover-dashboard *:after {  transition-duration:.01ms!important; animation-duration:.01ms!important;  }
+}
+
+/* Inside the Shoreline page: the simulator has a steady, independent height.
+   Events scroll within their own panel and never push the map or rover down. */
+.rover-dashboard { --danger: var(--destructive); color: var(--foreground); font-family: var(--font-body); }
+.rover-dashboard .app-shell {
+  height: clamp(720px, 92dvh, 1020px);
+  min-height: 720px;
+  max-width: 100%;
+}
+.rover-dashboard .workspace {
+  height: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.rover-dashboard .sim-frame { min-height: 440px; }
+.rover-dashboard .panel-title-row h2,
+.rover-dashboard .sim-toolbar h2 { text-wrap: initial; }
+@media (max-width: 850px) {
+  .rover-dashboard .app-shell { height: auto; min-height: 0; }
+  .rover-dashboard .workspace { height: auto; }
+  .rover-dashboard .sim-column { min-height: 650px; }
+}

@@ -1,0 +1,123 @@
+/* The token contract, and the whole of this site's art direction: :root holds
+   the values, @theme inline turns them into utilities.
+
+   One colour scheme, deliberately. The palette is coastal and physical rather
+   than editorial: a deep tide-silt ink for text and for the engineering band, a
+   ground that is either pale sand or light surf, and a single saturated kelp
+   green reserved for actions, measured values and the device's own mesh. */
+:root {
+  --background: #f3f0e6; /* dry sand — the page ground on the mission page */
+  --foreground: #16232b; /* tide silt — body ink */
+  --card: #faf8f2; /* light surf — raised cells and the spec sheet */
+  --card-foreground: #16232b;
+  --popover: #faf8f2;
+  --popover-foreground: #16232b;
+
+  --primary: #0e3f3c; /* kelp teal, dark enough for a button ground */
+  --primary-foreground: #f4f9f5;
+  --primary-soft: #1c7a6d; /* the kelp green that measures things, on light */
+
+  --secondary: #e6e1d2; /* a half step down from the sand ground */
+  --secondary-foreground: #16232b;
+  --muted: #e6e1d2;
+  --muted-foreground: #55625a; /* 4.9:1 on sand, 5.4:1 on surf */
+  --accent: #d9e6de; /* pale surf glass */
+  --accent-foreground: #123f3b;
+
+  --destructive: #8f2a1d;
+
+  --border: #cdc7b6; /* the hairline, and the engineering grid rule */
+  --input: #cdc7b6;
+  --ring: #1c7a6d;
+
+  /* The dark band on the design page. Named roles, so the band's own ink never
+     borrows the light scheme's and quietly fails contrast. */
+  --ink-background: #0c1f24; /* deep water */
+  --ink-foreground: #e9efe8;
+  --ink-muted: #9dbbbb; /* 7.1:1 on deep water */
+  --ink-border: #2a454b;
+  --ink-accent: #63c3ab; /* the one accent that survives on deep water */
+
+  --font-heading: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-label: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --radius: 0.5rem;
+  /* A pill radius is for controls. Panels take the same corner up to a bound,
+     so a control chip does not make every card a lozenge. */
+  --radius-panel: min(var(--radius), 1.25rem);
+  --shadow: 0 1px 2px #16232b14, 0 18px 40px -24px #16232b38;
+
+  /* A 1.333 ramp, fluid between 360 and 1440. */
+  --hero-size: clamp(2.5rem, 1.6rem + 4.4vw, 4.25rem);
+  --step-1: clamp(1.75rem, 1.35rem + 1.8vw, 2.5rem);
+  --step-2: clamp(1.375rem, 1.15rem + 0.9vw, 1.75rem);
+  --step-3: clamp(1.125rem, 1.05rem + 0.4vw, 1.3125rem);
+  --step--1: 0.875rem;
+  --step--2: 0.75rem;
+
+  --heading-tracking: -0.022em;
+  --heading-line: 1.1;
+  --heading-weight: 600;
+  --body-size: 1rem;
+  --body-line: 1.65;
+
+  --content-width: 1200px;
+  --measure: 68ch;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --section-space: clamp(3.5rem, 7vw, 6.5rem);
+  --layout-gap: clamp(1.5rem, 3vw, 2.5rem);
+  --motion-fast: 180ms;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink-background);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-border: var(--ink-border);
+  --color-ink-accent: var(--ink-accent);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+  --font-label: var(--font-label);
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  /* shadcn's own mapping: rounded-md is the control, rounded-xl the panel. */
+  --radius-sm: max(0px, calc(var(--radius-panel) - 3px));
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-panel);
+  --radius-xl: calc(var(--radius-panel) + 4px);
+
+  --shadow-raised: var(--shadow);
+  --spacing-gutter: var(--gutter);
+  --spacing-section: var(--section-space);
+  --spacing-layout: var(--layout-gap);
+  --container-content: var(--content-width);
+  --container-measure: var(--measure);
+
+  --text-hero: var(--hero-size);
+  --text-step-1: var(--step-1);
+  --text-step-2: var(--step-2);
+  --text-step-3: var(--step-3);
+  --text-step--1: var(--step--1);
+  --text-step--2: var(--step--2);
+}

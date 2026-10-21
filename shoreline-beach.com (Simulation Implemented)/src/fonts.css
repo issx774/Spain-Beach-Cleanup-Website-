@@ -1,0 +1,9 @@
+/* The site's faces. Imported before Tailwind because CSS requires a remote
+   @import at the top of the bundled sheet. Changing a face means changing this
+   import and the --font-* values in theme.css together.
+
+   Three faces, no more: Fraunces for display — a serif with a slightly eroded,
+   sedimented cut that suits a structure built out of the tideline — over Inter
+   for body and for small caps labels, which keeps long engineering sentences
+   and specification tables plain. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
